@@ -26,17 +26,17 @@ export class NoticiasService {
   }
   getTopHeadlines(){
     this.headlinePage++;
-    return this.ejecutarQuey<RespuestaTopHeadlines>('/top-headlines?country=us&page='+this.headlinePage);
+    return this.ejecutarQuey<RespuestaTopHeadlines>('/top-headlines?country=co&page='+this.headlinePage);
   }
 
   getTopHeadlinesCategoria(categoria:string){
     if(categoria == this.categoriaActual){
       this.categoriaPage++;
-      return this.ejecutarQuey<RespuestaTopHeadlines>('/top-headlines?country=us&category='+categoria+"&page="+this.categoriaPage)
+      return this.ejecutarQuey<RespuestaTopHeadlines>('/top-headlines?country=co&category='+categoria+"&page="+this.categoriaPage)
     }else{
       this.categoriaPage = 1;
       this.categoriaActual = categoria;
-      return this.ejecutarQuey<RespuestaTopHeadlines>('/top-headlines?country=us&category='+categoria+"&page="+this.categoriaPage)
+      return this.ejecutarQuey<RespuestaTopHeadlines>('/top-headlines?country=co&category='+categoria+"&page="+this.categoriaPage)
     }
   }
 }
